@@ -7,8 +7,8 @@ To build the client, you need to use the `npm run build` with the arguments in t
 *`platform` - `mac` for macos, `linux` for linux, and `win` for windows*<br/>
 *`output type` - Any type of output type(dmg and pkg for macos, nsis for windows, deb, rpm, apk for linux, and zip is universal). A full list can be found in the specific target page for macos, windows, or linux [here](https://www.electron.build)*<br/>
 
-Here is an example command to build a .dmg for macos: `npm run build --x64 --mac dmg`
+Here is an example command to build a .dmg for macos: `npm run build x64 mac dmg`
 
 The output will be in: `dist/<platform>/<arch type>`
 
-For more information about command line arguments, check out the [electron-builder docs](https://www.electron.build/cli)
+For more information about command line arguments, check out the [electron-builder docs](https://www.electron.build/cli) ***WARNING: MAKE SURE TO IGNORE THE `--` THAT THE DOCUMENTATION PROVIDES. BUILD.JS PARSES THE ARGUMENTS WITHOUT THE `--`***
