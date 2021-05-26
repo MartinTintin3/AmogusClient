@@ -1,5 +1,5 @@
 {
-  "name": "martinsamongus",
+  "name": "amogusclient",
   "version": "1.0.0",
   "description": "A custom among us client",
   "main": "src/main.js",
@@ -9,22 +9,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/martinGITHUBER/MartinsAmongUs.git"
+    "url": "git+https://github.com/martinGITHUBER/AmogusClient.git"
   },
   "author": "MartinGITHUBER",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/martinGITHUBER/MartinsAmongUs/issues"
+    "url": "https://github.com/martinGITHUBER/AmogusClient/issues"
   },
-  "homepage": "https://github.com/martinGITHUBER/MartinsAmongUs#readme",
+  "homepage": "https://github.com/martinGITHUBER/AmogusClient#readme",
   "devDependencies": {
     "electron": "^13.0.1",
     "electron-builder": "^22.10.5",
     "eslint": "^7.27.0"
   },
   "build": {
-    "appId": "martin.martinsamongus.com",
-    "productName": "Martin's Among Us",
+    "appId": "martin.AmogusClient.com",
+    "productName": "Amogus Client",
     "files": [
       "app/**/**"
     ],
