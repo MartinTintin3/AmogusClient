@@ -9,4 +9,6 @@ To build the client, you need to use the `npm run build` with the arguments in t
 
 Here is an example command to build a .dmg for macos: `npm run build --x64 --mac dmg`
 
+The output will be in: `dist/<platform>/<arch type>`
+
 For more information about command line arguments, check out the [electron-builder docs](https://www.electron.build/cli)
