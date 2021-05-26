@@ -1,0 +1,57 @@
+{
+  "name": "martinsamongus",
+  "version": "1.0.0",
+  "description": "A custom among us client",
+  "main": "src/main.js",
+  "scripts": {
+    "build": "node build.js",
+    "live": "npx electron app/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martinGITHUBER/MartinsAmongUs.git"
+  },
+  "author": "MartinGITHUBER",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/martinGITHUBER/MartinsAmongUs/issues"
+  },
+  "homepage": "https://github.com/martinGITHUBER/MartinsAmongUs#readme",
+  "devDependencies": {
+    "electron": "^13.0.1",
+    "electron-builder": "^22.10.5",
+    "eslint": "^7.27.0"
+  },
+  "build": {
+    "appId": "martin.martinsamongus.com",
+    "productName": "Martin's Among Us",
+    "files": [
+      "app/**/**"
+    ],
+    "directories": {
+      "output": "./dist/${os}/${arch}",
+      "buildResources": "./app/**/**"
+    },
+    "mac": {
+      "category": "public.app-category.games",
+      "target": [
+        "zip",
+        "dmg",
+        "pkg"
+      ]
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "dmg": {
+      "backgroundColor": "#262626"
+    },
+    "pkg": {
+      "installLocation": "/Applications"
+    }
+  },
+  "dependencies": {
+    "child_process": "^1.0.2",
+    "fs": "^0.0.1-security"
+  }
+}
