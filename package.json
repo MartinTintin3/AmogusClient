@@ -5,7 +5,7 @@
   "main": "src/main.js",
   "scripts": {
     "build": "node build.js",
-    "live": "npx electron app/main.js"
+    "live": "npx electron src/main.js"
   },
   "repository": {
     "type": "git",
@@ -19,18 +19,18 @@
   "homepage": "https://github.com/martinGITHUBER/AmogusClient#readme",
   "devDependencies": {
     "electron": "^13.0.1",
-    "electron-builder": "^22.10.5",
+    "electron-builder": "^22.10.4",
     "eslint": "^7.27.0"
   },
   "build": {
     "appId": "martin.AmogusClient.com",
     "productName": "Amogus Client",
     "files": [
-      "app/**/**"
+      "src/**/**"
     ],
     "directories": {
       "output": "./dist/${os}/${arch}",
-      "buildResources": "./app/**/**"
+      "buildResources": "./src/**/**"
     },
     "mac": {
       "category": "public.app-category.games",

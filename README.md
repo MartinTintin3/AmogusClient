@@ -12,3 +12,5 @@ Here is an example command to build a .dmg for macos: `npm run build x64 mac dmg
 The output will be in: `dist/<platform>/<arch type>`
 
 For more information about command line arguments, check out the [electron-builder docs](https://www.electron.build/cli) ***WARNING: MAKE SURE TO IGNORE THE `--` THAT THE DOCUMENTATION PROVIDES. BUILD.JS PARSES THE ARGUMENTS WITHOUT THE `--`***
+
+*Note: electron-builder package version is set to `22.10.4` because `22.10.5` causes an error when builing for macos*
