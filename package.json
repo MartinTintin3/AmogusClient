@@ -57,10 +57,11 @@
         "dmg",
         "pkg"
       ],
-      "icon": "./icon.png"
+      "icon": "./app/icon.png"
     },
     "win": {
-      "target": "nsis"
+      "target": "nsis",
+      "icon": "./app/icon.png"
     },
     "dmg": {
       "backgroundColor": "#262626"
