@@ -7,15 +7,14 @@ function createWindow() {
 		width: 640,
 		height: 400,
 		webPreferences: {
-			preload: path.join(__dirname, 'preload.js'),
 			// devTools: false,
 			webSecurity: true,
-			nodeIntegration: true
+			nodeIntegration: true,
 		},
 	});
 
-	win.setAspectRatio(16/10);
-	
+	win.setAspectRatio(16 / 10);
+
 	win.loadURL(`file://${__dirname}/index.html`);
 }
 
