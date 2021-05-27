@@ -34,7 +34,7 @@ module.exports = {
 	},
 	plugins: [
 		new MiniCssExtractPlugin({
-			filename: 'css/custom_bulma.css',
+			filename: 'css/bundle.css',
 		}),
 	],
 };
