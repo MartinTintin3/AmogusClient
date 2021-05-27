@@ -1,5 +1,5 @@
 # About
-*Amogus Client* is a custom Among Us client coded in JavaScript. It uses [SkeldJS](https://github.com/SkeldJS/SkeldJS) for all the Among Us protocol related things, [Electron](https://www.electronjs.org/) for the desktop framework, [React](https://reactjs.org) for the UI, and obviously [Node.js](https://nodejs.org) for the JavaScript runtime and other extra libraries
+*Amogus Client* is a custom [Among Us](https://innersloth.com/gameAmongUs.php) client coded in JavaScript. It uses [SkeldJS](https://github.com/SkeldJS/SkeldJS) for all the Among Us protocol related things, [Electron](https://www.electronjs.org/) for the desktop framework, [React](https://reactjs.org) for the UI, and obviously [Node.js](https://nodejs.org) for the JavaScript runtime and other extra libraries
 # Building from source
 **Requirements:**
 
@@ -19,5 +19,10 @@ The output will be in: `dist/<platform>/<arch type>`
 For more information about command line arguments, check out the [electron-builder docs](https://www.electron.build/cli) ***WARNING: MAKE SURE TO IGNORE THE `--` THAT THE DOCUMENTATION PROVIDES. BUILD.JS PARSES THE ARGUMENTS WITHOUT THE `--`***
 
 *Note: electron-builder package version is set to `22.10.4` because `22.10.5` causes an error when builing for macos*
+
+# TO-DO
+- [ ] Add basic Among Us UI elements
+- [ ] Connect UI elements with corresponding Skeld.js calls
+- [ ] Add extra cool UI elements
 
 Credit goes to everyone who contributed to the frameworks/libraries used in this project
