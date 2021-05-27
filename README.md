@@ -17,9 +17,10 @@ Finally, to build the application, run: `npm run build <arch> <platform> <output
 Explanation for the arguments are below:
 * `arch type` - `x64` for 64-bit, `ia32` for 32-bit, `armv7l` for armv7l, and `arm64` for arm64
 * `platform` - `mac` for macos, `linux` for linux, and `win` for windows*<br/>
-* `output type` - The type of the output file that will be put in `dist/<platform>/<arch type>`. Here is a table for the output types available for different platforms(Some output types require configuration in the "build" section of package.json. Feel free to new ones)
+* `output type` - The type of the output file that will be put in `dist/<platform>/<arch type>`. Here is a table for the output types available for different platforms(Some output types require configuration in the "build" section of package.json. Feel free to new ones):
+
 Platform | Output Types
----------|-------------
+-------- | ------------
 
 Here is an example command to build a .dmg for macos: `npm run build x64 mac dmg`
 
