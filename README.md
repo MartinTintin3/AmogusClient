@@ -38,3 +38,5 @@ The output will be in: `dist/<platform>/<arch type>`
 - [ ] Add extra cool UI elements
 
 Credit goes to everyone who contributed to the frameworks/libraries used in this project
+
+***Disclaimer: We are not responsible for any of your actions and the results of your actions. If you get banned when using this client, its not our fault. Consider making a custom [Impostor](https://github.com/Impostor/Impostor) server so that you don't get banned on the official ones***
