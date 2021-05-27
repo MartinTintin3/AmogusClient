@@ -56,7 +56,8 @@
         "zip",
         "dmg",
         "pkg"
-      ]
+      ],
+      "icon": "./icon.png"
     },
     "win": {
       "target": "nsis"

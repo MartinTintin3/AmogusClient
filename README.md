@@ -1,5 +1,15 @@
 # About
 *Amogus Client* is a custom [Among Us](https://innersloth.com/gameAmongUs.php) client coded in JavaScript. It uses [SkeldJS](https://github.com/SkeldJS/SkeldJS) for all the Among Us protocol related things, [Electron](https://www.electronjs.org/) for the desktop framework, [React](https://reactjs.org) for the UI, and obviously [Node.js](https://nodejs.org) for the JavaScript runtime and other extra libraries
+
+# File structure
+The `src` folder contains all the .jsx, js, and .scss files that will be compiled into the app
+
+The `app` folder contains the core .html files and `main.js` which is used for electron.js setup
+
+The `app/build.js` file should NOT be touched. This is the js output you get when you compile everything in `src`
+
+The `app/bundle.css` file is the bundled version of all the .scss files in `src`. Just like `build.js`, this file should NOT be touched
+
 # Building from source
 **Requirements:**
 
@@ -10,7 +20,7 @@ First clone the repository
 `git clone https://github.com/martinGITHUBER/AmogusClient`
 Install all dependancies
 `npm i`
-Next, if you have changed anything in `src/` then make sure to bundle it up into bundle.css and bundle.js
+Next, if you have changed anything in `src` then make sure to bundle it up into bundle.css and bundle.js
 `npm run bundle`
 Finally, to build the application, run: `npm run build <arch> <platform> <output type>`
 
