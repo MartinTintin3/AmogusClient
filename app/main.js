@@ -7,7 +7,7 @@ function createWindow() {
 		width: 640,
 		height: 400,
 		webPreferences: {
-			// devTools: false,
+			devTools: true,
 			webSecurity: true,
 			nodeIntegration: true,
 		},
@@ -16,6 +16,24 @@ function createWindow() {
 	win.setAspectRatio(16 / 10);
 
 	win.loadURL(`file://${__dirname}/index.html`);
+
+	let correctDevTools = false;
+
+	win.webContents.on('devtools-opened', () => {
+		if(!correctDevTools) {
+			win.webContents.closeDevTools();
+			correctDevTools = true;
+			win.webContents.openDevTools({
+				mode:'detach',
+			});
+		}
+	});
+
+	win.webContents.on('devtools-closed', () => {
+		if(correctDevTools) {
+			correctDevTools = false;
+		}
+	});
 }
 
 app.on('ready', () => {
