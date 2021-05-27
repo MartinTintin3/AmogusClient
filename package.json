@@ -2,10 +2,10 @@
   "name": "amogusclient",
   "version": "1.0.0",
   "description": "A custom among us client",
-  "main": "src/main.js",
+  "main": "app/main.js",
   "scripts": {
     "build": "node build.js",
-    "live": "npx electron src/main.js",
+    "live": "npx electron app/main.js",
     "compile": "npx webpack"
   },
   "repository": {
@@ -35,11 +35,11 @@
     "appId": "martin.AmogusClient.com",
     "productName": "Amogus Client",
     "files": [
-      "src/**/**"
+      "app/**/**"
     ],
     "directories": {
       "output": "./dist/${os}/${arch}",
-      "buildResources": "./src/**/**"
+      "buildResources": "./app/**/**"
     },
     "mac": {
       "category": "public.app-category.games",

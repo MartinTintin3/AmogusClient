@@ -6,7 +6,9 @@
 * Node >=15
 * NPM >=7
 
-To build the client, first make sure you have cloned this repository with `git clone https://github.com/martinGITHUBER/AmogusClient`. Then, `cd` in that directory and run `npm i` to install all dependancies. After this, you are ready to build. You need to use the `npm run build` with the arguments in this format:<br/>
+Before running any script that either builds or runs the app, make sure that you run `npm run compile` if you changed anything in `src/` to make sure your changes are bundled into `app/js/build.js`
+
+If you changed something in `src/`, then you will have to first run `npm run compile` to make sure webpack bundles your changes. After this, you need to use the `npm run build` with the arguments in this format:<br/>
 `npm run build --<arch type> --<platform> <list of output types seperated by spaces>`<br/><br/>
 *`arch type` - `x64` for 64-bit, `ia32` for 32-bit, `armv7l` for armv7l, and `arm64` for arm64*<br/>
 *`platform` - `mac` for macos, `linux` for linux, and `win` for windows*<br/>
