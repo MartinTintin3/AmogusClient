@@ -48,8 +48,8 @@ if(!fs.existsSync(path.join(appDataDirPath, 'servers.json'))) {
 		],
 	};
 
-	fs.writeFileSync(path.join(appDataDirPath, 'servers.json'), JSON.stringify(data), err => {
-		process.exit();
+	fs.writeFileSync(path.join(appDataDirPath, 'servers.json'), JSON.stringify(data), () => {
+		process.exit(1);
 	});
 
 	console.log(fs.readFileSync(path.join(appDataDirPath, 'servers.json')).toString());
