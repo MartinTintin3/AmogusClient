@@ -10,6 +10,8 @@ function createWindow() {
 			devTools: true,
 			webSecurity: true,
 			nodeIntegration: true,
+			contextIsolation: false,
+			enableRemoteModule: true,
 		},
 	});
 

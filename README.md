@@ -40,6 +40,8 @@ Here is an example command to build a .dmg for macos: `npm run build x64 mac dmg
 
 The output will be in: `dist/<platform>/<arch type>`
 
+Please note that when building a directory might generate in `dist` called `${os}`. This is an electron-builder bug, so you can delete the folder.
+
 *Note: electron-builder package version is set to `22.10.4` because `22.10.5` causes an error when builing for macos*
 
 # TO-DO

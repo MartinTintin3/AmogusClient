@@ -11,6 +11,13 @@ const platform = platforms.includes(args[1].toLowerCase()) ? args[1].toLowerCase
 
 const types = args.length > 2 ? args.splice(2) : false;
 
+try {
+	fs.rmdirSync('dist/${os}');
+}
+// eslint-disable-next-line no-empty
+catch(e) {}
+
+
 fs.rm(`./dist/${platform == 'windows' ? 'win' : platform}/${arch}/${platform == 'windows' || platform == 'wind' ? 'win-unpacked' : platform}`, { recursive: true }, err => {
 	if(err) console.error(err);
 	const build = spawn('npx', ['electron-builder', `--${arch}`, `--${platform}`].concat(types ? types : []), { stdio: 'inherit' });

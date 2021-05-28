@@ -2,7 +2,7 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-	entry: './src/index.jsx',
+	entry: './src/main.jsx',
 	mode: 'production',
 	module: {
 		rules: [{
@@ -37,4 +37,8 @@ module.exports = {
 			filename: 'bundle.css',
 		}),
 	],
+	target: 'electron-main',
+	optimization: {
+		minimize: false,
+	},
 };

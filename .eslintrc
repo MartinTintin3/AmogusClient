@@ -6,7 +6,8 @@
 	"env": {
 		"node": true,
 		"es6": true,
-		"browser": true
+		"browser": true,
+		"shared-node-browser": true
 	},
 	"parserOptions": {
 		"ecmaVersion": 2019

@@ -20,7 +20,6 @@
   "homepage": "https://github.com/martinGITHUBER/AmogusClient#readme",
   "dependencies": {
     "child_process": "^1.0.2",
-    "fs": "^0.0.1-security",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
@@ -57,11 +56,11 @@
         "dmg",
         "pkg"
       ],
-      "icon": "./app/icon.png"
+      "icon": "icon.png"
     },
     "win": {
       "target": "nsis",
-      "icon": "./app/icon.png"
+      "icon": "icon.png"
     },
     "dmg": {
       "backgroundColor": "#262626"
