@@ -1,10 +1,13 @@
 const { remote } = require('electron');
 const path = require('path');
+const { MenuScene } = require('./scenes/MenuScene.jsx');
 
 console.log(remote.getCurrentWebContents().getTitle());
 const fs = remote.require('fs');
 
-require('./style.scss');
+let currentScene = new MenuScene(document.getElementById('root'));
+
+require('./bulma.scss');
 
 const getAppDataPath = () => {
 	switch (process.platform) {
@@ -54,3 +57,7 @@ if(!fs.existsSync(path.join(appDataDirPath, 'servers.json'))) {
 
 	console.log(fs.readFileSync(path.join(appDataDirPath, 'servers.json')).toString());
 }
+
+currentScene.init();
+
+setInterval(() => currentScene.render(), 1000 / 30);

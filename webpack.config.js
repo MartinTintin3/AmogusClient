@@ -34,7 +34,7 @@ module.exports = {
 	},
 	plugins: [
 		new MiniCssExtractPlugin({
-			filename: 'bundle.css',
+			filename: 'bulma.css',
 		}),
 	],
 	target: 'electron-main',
