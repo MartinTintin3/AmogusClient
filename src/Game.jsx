@@ -1,4 +1,4 @@
-import { MenuScene } from './scenes/menuScene/MenuScene';
+import { MenuScene } from './scenes/menuScene/MenuScene.jsx';
 
 export class Game {
 	constructor(root) {
@@ -7,6 +7,7 @@ export class Game {
 
 	init() {
 		this._currentScene = new MenuScene(this);
+		this._currentScene.init();
 		this._currentPopup = null;
 		this.renderer = setInterval(() => {
 			this._currentScene.render();
