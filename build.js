@@ -14,8 +14,9 @@ const types = args.length > 2 ? args.splice(2) : false;
 try {
 	fs.rmdirSync('dist/${os}');
 }
-// eslint-disable-next-line no-empty
-catch(e) {}
+catch(e) {
+	console.log(e);
+}
 
 
 fs.rm(`./dist/${platform == 'windows' ? 'win' : platform}/${arch}/${platform == 'windows' || platform == 'wind' ? 'win-unpacked' : platform}`, { recursive: true }, err => {

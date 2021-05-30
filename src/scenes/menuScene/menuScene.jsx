@@ -1,5 +1,5 @@
+import { OnlineScene } from '../onlineScene/OnlineScene.jsx';
 import { Scene } from '../Scene.jsx';
-import { OnlineButton } from './OnlineButton.jsx';
 const React = require('react');
 const ReactDOM = require('react-dom');
 
@@ -11,7 +11,7 @@ export class MenuScene extends Scene {
 
 	init() {
 		this.buttons = {};
-		this.buttons.online = <OnlineButton class='button is-primary' id='onlineButton' text='Online' game={this.game}/>;
+		this.buttons.online = <button className='button is-primary' id='onlineButton' onClick={() => this.game.setScene(OnlineScene)}>Online</button>;
 	}
 
 	render(root) {

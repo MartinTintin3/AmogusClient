@@ -14,8 +14,8 @@ export class Game {
 		}, 1000 / 30);
 	}
 
-	setScene(scene, shouldInit) {
-		this._currentScene = scene;
+	setScene(Scene, shouldInit) {
+		this._currentScene = new Scene(this);
 		if(shouldInit) this._currentScene.init();
 	}
 }
