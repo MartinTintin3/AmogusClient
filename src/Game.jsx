@@ -10,7 +10,7 @@ export class Game {
 		this._currentScene.init();
 		this._currentPopup = null;
 		this.renderer = setInterval(() => {
-			this._currentScene.render();
+			this._currentScene.render(this.root);
 		}, 1000 / 30);
 	}
 
