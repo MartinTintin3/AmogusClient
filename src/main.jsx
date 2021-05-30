@@ -1,14 +1,17 @@
+// Imports
 const { remote } = require('electron');
 const path = require('path');
-const { MenuScene } = require('./scenes/MenuScene.jsx');
-
-console.log(remote.getCurrentWebContents().getTitle());
+const { Game } = require('./Game.jsx');
+const { MenuScene } = require('./scenes/menuScene/MenuScene.jsx');
 const fs = remote.require('fs');
 
-let currentScene = new MenuScene(document.getElementById('root'));
+// Set the scene manager
+const game = new Game(document.getElementById('root'));
 
+// Import custom bulma
 require('./bulma.scss');
 
+// Funtion to get application data folder
 const getAppDataPath = () => {
 	switch (process.platform) {
 	case 'darwin':
@@ -29,6 +32,7 @@ if (!fs.existsSync(appDataDirPath)) {
 	fs.mkdirSync(appDataDirPath);
 }
 
+// Create servers.js if needed
 if(!fs.existsSync(path.join(appDataDirPath, 'servers.json'))) {
 	const data = {
 		currentlySelected: 0,
@@ -58,6 +62,4 @@ if(!fs.existsSync(path.join(appDataDirPath, 'servers.json'))) {
 	console.log(fs.readFileSync(path.join(appDataDirPath, 'servers.json')).toString());
 }
 
-currentScene.init();
-
-setInterval(() => currentScene.render(), 1000 / 30);
+game.init();

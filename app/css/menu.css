@@ -1,3 +1,9 @@
 #menuScene .button {
+	padding: 2%;
 	margin: 2%;
+	top: 40vh;
+}
+
+#menuScene { 
+	display: block;
 }
