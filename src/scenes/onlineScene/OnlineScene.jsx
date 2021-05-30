@@ -2,9 +2,9 @@ import { Scene } from '../Scene.jsx';
 const React = require('react');
 const ReactDOM = require('react-dom');
 
-export class MenuScene extends Scene {
+export class OnlineScene extends Scene {
 	constructor(game) {
-		super();
+		super(game);
 		this.game = game;
 	}
 

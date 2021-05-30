@@ -5,7 +5,7 @@ const ReactDOM = require('react-dom');
 
 export class MenuScene extends Scene {
 	constructor(game) {
-		super();
+		super(game);
 		this.game = game;
 	}
 

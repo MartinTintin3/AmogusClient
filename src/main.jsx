@@ -1,9 +1,7 @@
 // Imports
-require('@electron/remote/main').initialize();
 const path = require('path');
 const { Game } = require('./Game.jsx');
-const remote = require('@electron/remote');
-const fs = remote.require('fs');
+const fs = require('fs');
 // Set the scene manager
 const game = new Game(document.getElementById('root'));
 
