@@ -6,6 +6,7 @@ export class OnlineScene extends Scene {
 	constructor(game) {
 		super(game);
 		this.game = game;
+		this.game.audioManager.removeSound('test');
 	}
 
 	render(root) {

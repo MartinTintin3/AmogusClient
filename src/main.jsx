@@ -2,6 +2,7 @@
 const path = require('path');
 const { Game } = require('./Game.jsx');
 const fs = require('fs');
+
 // Set the scene manager
 const game = new Game(document.getElementById('root'));
 

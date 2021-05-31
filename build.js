@@ -12,7 +12,9 @@ const platform = platforms.includes(args[1].toLowerCase()) ? args[1].toLowerCase
 const types = args.length > 2 ? args.splice(2) : false;
 
 try {
-	fs.rmdirSync('dist/${os}');
+	fs.rmdirSync('dist/${os}', {
+		recursive: true,
+	});
 }
 catch(e) {
 	console.log(e);
