@@ -2,11 +2,6 @@ export class AudioManager {
 	constructor(game) {
 		this.game = game;
 		this.currentSounds = [];
-		this.volume = {
-			ui: 0.5,
-			music: 1,
-			game: 1,
-		};
 	}
 
 	addSound(name, path, type, shouldRepeat) {
@@ -14,7 +9,7 @@ export class AudioManager {
 		audio.controls = false;
 
 		audio.addEventListener('canplaythrough', () => {
-			audio.volume = type == 'ui' ? this.volume.ui : type == 'game' ? this.volume.game : type == 'music' ? this.volume.music : 1;
+			audio.volume = type == 'ui' ? this.game.config.sound.ui : type == 'game' ? this.game.config.sound.game : type == 'music' ? this.game.config.sound.music : 1;
 			audio.loop = shouldRepeat instanceof Boolean ? shouldRepeat : false;
 
 			audio.play();
@@ -32,7 +27,6 @@ export class AudioManager {
 	removeSound(name) {
 		const index = this.currentSounds.findIndex(sound => sound.name == name);
 		if(index >= 0) {
-			console.log(this.currentSounds);
 			this.currentSounds[index].object.pause();
 			this.currentSounds.splice(index, 1);
 		}

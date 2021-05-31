@@ -20,6 +20,6 @@ export class MenuScene extends Scene {
 	}
 
 	render(root) {
-		ReactDOM.render(<div className='scene' id='menuScene'>{Object.values(this.buttons)}</div>, root);
+		ReactDOM.render(<div id='menuScene' className='scene'>{Object.values(this.buttons)}</div>, root);
 	}
 }

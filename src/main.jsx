@@ -4,7 +4,7 @@ const { Game } = require('./Game.jsx');
 const fs = require('fs');
 
 // Set the scene manager
-const game = new Game(document.getElementById('root'));
+const game = new Game(document.getElementsByTagName('body')[0]);
 
 // Import custom bulma
 require('./bulma.scss');
@@ -60,4 +60,4 @@ if(!fs.existsSync(path.join(appDataDirPath, 'servers.json'))) {
 	console.log(fs.readFileSync(path.join(appDataDirPath, 'servers.json')).toString());
 }
 
-game.init();
+game.init(30);

@@ -4,7 +4,7 @@
   "description": "A custom among us client",
   "main": "app/main.js",
   "scripts": {
-    "build": "node build.js",
+    "build": "node builder.js",
     "live": "npx electron app/main.js",
     "compile": "npx webpack"
   },

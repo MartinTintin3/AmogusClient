@@ -4,6 +4,7 @@
 	top: 40vh;
 }
 
-#menuScene { 
+#menuScene {
 	display: block;
+	text-align: center;
 }
