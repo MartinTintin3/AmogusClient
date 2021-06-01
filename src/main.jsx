@@ -1,6 +1,6 @@
 // Imports
 const path = require('path');
-const { Game } = require('./Game.jsx');
+import { Game } from './Game.jsx';
 const fs = require('fs');
 
 // Set the scene manager

@@ -1,12 +1,13 @@
 import { AudioManager } from './managers/audioManager.jsx';
 import { MenuScene } from './scenes/menuScene/MenuScene.jsx';
+const { SkeldjsClient } = require('@skeldjs/client');
 
 export class Game {
 	constructor(root) {
 		this.root = root;
 	}
 
-	init(fps) {
+	init(fps, clientVersion) {
 		// Create config object
 		this.config = {
 			sound: {
@@ -18,6 +19,7 @@ export class Game {
 				fps,
 			},
 		};
+		this.client = new SkeldjsClient(clientVersion);
 		// Set audio manager
 		this.audioManager = new AudioManager(this);
 		this._currentScene = new MenuScene(this);
