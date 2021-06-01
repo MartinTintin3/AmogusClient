@@ -1,6 +1,7 @@
 import { AudioManager } from './managers/audioManager.jsx';
 import { MenuScene } from './scenes/menuScene/MenuScene.jsx';
 const { SkeldjsClient } = require('@skeldjs/client');
+const { authTokenHook } = require('@skeldjs/get-auth-token');
 
 export class Game {
 	constructor(root) {
@@ -20,6 +21,10 @@ export class Game {
 			},
 		};
 		this.client = new SkeldjsClient(clientVersion);
+		authTokenHook(this.client, {
+			exe_path: 'GetAuthToken.exe',
+			cert_path: 'PubsCert.pem',
+		});
 		// Set audio manager
 		this.audioManager = new AudioManager(this);
 		this._currentScene = new MenuScene(this);
