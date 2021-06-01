@@ -356,3 +356,6 @@ MigrationBackup/
 # Output
 out
 dist
+
+# Submodule
+GetAuthToken
