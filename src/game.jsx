@@ -19,7 +19,7 @@ export class Game {
 			},
 		};
 		// Set audio manager
-		this.audioManager = new AudioManager(this.game);
+		this.audioManager = new AudioManager(this);
 		this._currentScene = new MenuScene(this);
 		this._currentScene.init();
 		this._currentPopup = null;

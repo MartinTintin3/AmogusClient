@@ -1,10 +1,10 @@
-#menuScene .button {
-	padding: 2%;
-	margin: 2%;
-	top: 40vh;
-}
-
 #menuScene {
 	display: block;
 	text-align: center;
+}
+
+#menuScene #onlineButton {
+	padding: 2vh 2vw;
+	margin: 2vh 2vw;
+	top: 40vh;
 }

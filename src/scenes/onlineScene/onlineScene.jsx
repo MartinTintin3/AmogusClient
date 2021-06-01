@@ -10,6 +10,6 @@ export class OnlineScene extends Scene {
 	}
 
 	render(root) {
-		ReactDOM.render(<p>online scene</p>, root);
+		ReactDOM.render(<div id='onlineScene' className='scene'><p>online scene</p></div>, root);
 	}
 }

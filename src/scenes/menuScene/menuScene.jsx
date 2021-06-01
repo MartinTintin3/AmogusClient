@@ -12,7 +12,7 @@ export class MenuScene extends Scene {
 	init() {
 		this.game.audioManager.addSound('main_menu', 'menu_music.mp3', 'music', true);
 		this.buttons = {};
-		this.buttons.online = <button className='button is-primary' id='onlineButton' onClick={() => {
+		this.buttons.online = <button className='button is-primary menuScene' id='onlineButton' onClick={() => {
 			this.game.audioManager.addSound('click', 'general_sounds/UI_Select.wav', 'ui', false);
 
 			this.game.setScene(OnlineScene);
