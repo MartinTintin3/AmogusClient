@@ -16706,8 +16706,8 @@ class AudioManager {
 
 /* eslint-disable no-empty-function */
 class Scene {
-  constructor(game) {
-    this.game = game;
+  constructor(app) {
+    this.app = app;
   }
 
   render(root) {}
@@ -16721,10 +16721,10 @@ const React = __webpack_require__(7294);
 const ReactDOM = __webpack_require__(3935);
 
 class OnlineScene extends Scene {
-  constructor(game) {
-    super(game);
-    this.game = game;
-    this.game.audioManager.removeSound('test');
+  constructor(app) {
+    super(app);
+    this.app = app;
+    this.app.audioManager.removeSound('test');
   }
 
   render(root) {
@@ -16744,22 +16744,22 @@ const MenuScene_React = __webpack_require__(7294);
 const MenuScene_ReactDOM = __webpack_require__(3935);
 
 class MenuScene extends Scene {
-  constructor(game) {
-    super(game);
-    this.game = game;
+  constructor(app) {
+    super(app);
+    this.app = app;
   }
 
   init() {
-    this.game.audioManager.addSound('main_menu', 'menu_music.mp3', 'music', true);
+    this.app.audioManager.addSound('main_menu', 'menu_music.mp3', 'music', true);
     this.buttons = {};
     this.buttons.online = /*#__PURE__*/MenuScene_React.createElement("button", {
       className: "button is-primary menuScene",
       id: "onlineButton",
       onClick: () => {
-        this.game.audioManager.addSound('click', 'general_sounds/UI_Select.wav', 'ui', false);
-        this.game.setScene(OnlineScene);
+        this.app.audioManager.addSound('click', 'general_sounds/UI_Select.wav', 'ui', false);
+        this.app.setScene(OnlineScene);
       },
-      onMouseEnter: () => this.game.audioManager.addSound('hover', 'general_sounds/UI_Hover.wav', 'ui', false)
+      onMouseEnter: () => this.app.audioManager.addSound('hover', 'general_sounds/UI_Hover.wav', 'ui', false)
     }, "Online");
   }
 
@@ -16771,65 +16771,55 @@ class MenuScene extends Scene {
   }
 
 }
-;// CONCATENATED MODULE: ./src/Game.jsx
+;// CONCATENATED MODULE: ./src/app.jsx
 
 
 
-
-const {
-  SkeldjsClient
-} = __webpack_require__(7981);
-
-const {
-  authTokenHook
-} = __webpack_require__(1214);
-
+const { SkeldjsClient } = __webpack_require__(7981);
+const { authTokenHook } = __webpack_require__(1214);
 const fs = __webpack_require__(5747);
-
 const path = __webpack_require__(5622);
 
-class Game {
-  constructor(root) {
-    this.root = root;
-  }
+class App {
+	constructor(root) {
+		this.root = root;
+	}
 
-  init(fps, clientVersion, appDataDirPath) {
-    // Create config object
-    this.config = {
-      sound: {
-        ui: 0.3,
-        game: 1,
-        music: 0.7
-      },
-      graphics: {
-        fps
-      }
-    };
-    this.client = new SkeldjsClient(clientVersion);
-    this.appDataPath = appDataDirPath;
-    console.log(path.join(process.resourcesPath, 'binaries/GetAuthToken.exe'));
-    authTokenHook(this.client, {
-      exe_path: path.join(process.resourcesPath, 'binaries/GetAuthToken.exe'),
-      cert_path: ''
-    }); // Set audio manager
+	init(fps, clientVersion, appDataDirPath) {
+		// Create config object
+		this.config = {
+			sound: {
+				ui: 0.3,
+				game: 1,
+				music: 0.7,
+			},
+			graphics: {
+				fps,
+			},
+		};
+		this.client = new SkeldjsClient(clientVersion);
+		this.appDataPath = appDataDirPath;
+		console.log(path.join(process.resourcesPath, 'binaries/GetAuthToken.exe'));
+		authTokenHook(this.client, {
+			exe_path: path.join(process.resourcesPath, 'binaries/GetAuthToken.exe'),
+			cert_path: '',
+		});
+		// Set audio manager
+		this.audioManager = new AudioManager(this);
+		this._currentScene = new MenuScene(this);
+		this._currentScene.init();
+		this._currentPopup = null;
+		this.renderer = setInterval(() => {
+			this._currentScene.render(this.root);
+		}, 1000 / fps);
+	}
 
-    this.audioManager = new AudioManager(this);
-    this._currentScene = new MenuScene(this);
-
-    this._currentScene.init();
-
-    this._currentPopup = null;
-    this.renderer = setInterval(() => {
-      this._currentScene.render(this.root);
-    }, 1000 / fps);
-  }
-
-  setScene(Scene, shouldInit) {
-    this._currentScene = new Scene(this);
-    if (shouldInit) this._currentScene.init();
-  }
-
+	setScene(Scene, shouldInit) {
+		this._currentScene = new Scene(this);
+		if(shouldInit) this._currentScene.init();
+	}
 }
+
 ;// CONCATENATED MODULE: ./src/main.jsx
 // Imports
 const main_path = __webpack_require__(5622);
@@ -16839,7 +16829,7 @@ const main_path = __webpack_require__(5622);
 const main_fs = __webpack_require__(5747); // Set the scene manager
 
 
-const game = new Game(document.getElementsByTagName('body')[0]); // Import custom bulma
+const app = new App(document.getElementsByTagName('body')[0]); // Import custom bulma
 
 __webpack_require__(7173); // Funtion to get application data folder
 
@@ -16891,7 +16881,7 @@ if (!main_fs.existsSync(main_path.join(appDataDirPath, 'servers.json'))) {
   console.log(main_fs.readFileSync(main_path.join(appDataDirPath, 'servers.json')).toString());
 }
 
-game.init(30, '2021.4.2', appDataDirPath);
+app.init(30, '2021.4.2', appDataDirPath);
 })();
 
 /******/ })()

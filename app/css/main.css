@@ -1,6 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
+
 body, .scene { 
 	margin: 0px;
 	height: 100vh;
 	width: 100vw;
 	position: absolute;
+}
+
+.button {
+	font-weight: 1000;
+	font-family: 'Amatic SC', cursive;
 }
