@@ -2,8 +2,8 @@
 /* eslint-disable no-empty-function */
 
 export class Scene {
-	constructor(game) {
-		this.game = game;
+	constructor(app) {
+		this.app = app;
 	}
 
 	render(root) { }

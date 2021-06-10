@@ -3,10 +3,10 @@ const React = require('react');
 const ReactDOM = require('react-dom');
 
 export class OnlineScene extends Scene {
-	constructor(game) {
-		super(game);
-		this.game = game;
-		this.game.audioManager.removeSound('test');
+	constructor(app) {
+		super(app);
+		this.app = app;
+		this.app.audioManager.removeSound('test');
 	}
 
 	render(root) {

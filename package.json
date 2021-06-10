@@ -52,6 +52,7 @@
       "output": "./dist/${os}/${arch}",
       "buildResources": "./app/**/**"
     },
+    "extraResources": ["./binaries/GetAuthToken.exe"],
     "mac": {
       "category": "public.app-category.games",
       "target": [

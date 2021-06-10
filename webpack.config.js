@@ -38,4 +38,7 @@ module.exports = {
 		}),
 	],
 	target: 'electron-main',
+	optimization: {
+		minimize: false,
+	},
 };

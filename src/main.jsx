@@ -1,10 +1,10 @@
 // Imports
 const path = require('path');
-import { Game } from './Game.jsx';
+import { App } from './app.jsx';
 const fs = require('fs');
 
 // Set the scene manager
-const game = new Game(document.getElementsByTagName('body')[0]);
+const app = new App(document.getElementsByTagName('body')[0]);
 
 // Import custom bulma
 require('./bulma.scss');
@@ -60,4 +60,4 @@ if(!fs.existsSync(path.join(appDataDirPath, 'servers.json'))) {
 	console.log(fs.readFileSync(path.join(appDataDirPath, 'servers.json')).toString());
 }
 
-game.init(30);
+app.init(30, '2021.4.2', appDataDirPath);

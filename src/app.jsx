@@ -1,14 +1,17 @@
+import { pathToFileURL } from 'url';
 import { AudioManager } from './managers/audioManager.jsx';
 import { MenuScene } from './scenes/menuScene/MenuScene.jsx';
 const { SkeldjsClient } = require('@skeldjs/client');
 const { authTokenHook } = require('@skeldjs/get-auth-token');
+const fs = require('fs');
+const path = require('path');
 
-export class Game {
+export class App {
 	constructor(root) {
 		this.root = root;
 	}
 
-	init(fps, clientVersion) {
+	init(fps, clientVersion, appDataDirPath) {
 		// Create config object
 		this.config = {
 			sound: {
@@ -21,9 +24,11 @@ export class Game {
 			},
 		};
 		this.client = new SkeldjsClient(clientVersion);
+		this.appDataPath = appDataDirPath;
+		console.log(path.join(process.resourcesPath, 'binaries/GetAuthToken.exe'));
 		authTokenHook(this.client, {
-			exe_path: 'GetAuthToken.exe',
-			cert_path: 'PubsCert.pem',
+			exe_path: path.join(process.resourcesPath, 'binaries/GetAuthToken.exe'),
+			cert_path: '',
 		});
 		// Set audio manager
 		this.audioManager = new AudioManager(this);
