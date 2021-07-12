@@ -19,28 +19,28 @@
   },
   "homepage": "https://github.com/martinGITHUBER/AmogusClient#readme",
   "dependencies": {
-    "@electron/remote": "^1.1.0",
-    "@skeldjs/client": "^2.10.1",
-    "@skeldjs/get-auth-token": "^2.10.1",
+    "@electron/remote": "^1.2.0",
+    "@skeldjs/client": "^2.11.11",
+    "@skeldjs/get-auth-token": "^2.11.11",
     "child_process": "^1.0.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@babel/preset-react": "^7.13.13",
+    "@babel/preset-react": "^7.14.5",
     "babel-loader": "^8.2.2",
-    "bulma": "^0.9.2",
+    "bulma": "^0.9.3",
     "css-loader": "^5.2.6",
-    "electron": "^13.0.1",
-    "electron-builder": "^22.10.4",
-    "eslint": "^7.27.0",
-    "eslint-plugin-react": "^7.23.2",
-    "mini-css-extract-plugin": "^1.6.0",
-    "node-sass": "^6.0.0",
-    "sass-loader": "^11.1.1",
-    "style-loader": "^2.0.0",
-    "webpack": "^5.37.1",
-    "webpack-cli": "^4.7.0"
+    "electron": "^13.1.6",
+    "electron-builder": "^22.11.7",
+    "eslint": "^7.30.0",
+    "eslint-plugin-react": "^7.24.0",
+    "mini-css-extract-plugin": "^2.1.0",
+    "node-sass": "^6.0.1",
+    "sass-loader": "^12.1.0",
+    "style-loader": "^3.1.0",
+    "webpack": "^5.44.0",
+    "webpack-cli": "^4.7.2"
   },
   "build": {
     "appId": "martin.AmogusClient.com",
@@ -52,7 +52,9 @@
       "output": "./dist/${os}/${arch}",
       "buildResources": "./app/**/**"
     },
-    "extraResources": ["./binaries/GetAuthToken.exe"],
+    "extraResources": [
+      "./binaries/GetAuthToken.exe"
+    ],
     "mac": {
       "category": "public.app-category.games",
       "target": [

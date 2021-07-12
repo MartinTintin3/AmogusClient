@@ -24,12 +24,6 @@ export class App {
 			},
 		};
 		this.client = new SkeldjsClient(clientVersion);
-		this.appDataPath = appDataDirPath;
-		console.log(path.join(process.resourcesPath, 'binaries/GetAuthToken.exe'));
-		authTokenHook(this.client, {
-			exe_path: path.join(process.resourcesPath, 'binaries/GetAuthToken.exe'),
-			cert_path: '',
-		});
 		// Set audio manager
 		this.audioManager = new AudioManager(this);
 		this._currentScene = new MenuScene(this);

@@ -60,4 +60,4 @@ if(!fs.existsSync(path.join(appDataDirPath, 'servers.json'))) {
 	console.log(fs.readFileSync(path.join(appDataDirPath, 'servers.json')).toString());
 }
 
-app.init(30, '2021.4.2', appDataDirPath);
+app.init(30, '2021.6.30', appDataDirPath);
